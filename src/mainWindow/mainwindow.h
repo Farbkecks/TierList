@@ -11,5 +11,4 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
 private:
-    QPushButton *button;
 };
