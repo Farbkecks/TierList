@@ -1,5 +1,5 @@
 add_library(libMainWindow
-        mainwindow.cpp
+        MainWindow.cpp
         )
 
 target_link_libraries(libMainWindow PRIVATE Qt6::Widgets)
