@@ -1,6 +1,6 @@
 add_executable(TierList main.cpp)
 
-target_link_libraries(TierList libMainWindow)
+target_link_libraries(TierList libMainWindow libTypeLabel)
 
 if (WIN32)
     set(DEBUG_SUFFIX)
