@@ -2,6 +2,9 @@
 
 #include <QMainWindow>
 #include <QPushButton>
+#include <QKeyEvent>
+#include <QApplication>
+#include <QGridLayout>
 #include "TypeLabel.h"
 #include "Constants.h"
 
@@ -11,6 +14,11 @@ Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+
 private:
-    TypeLabel typeLabel;
+    QWidget *centralWidget;
+    TypeLabel *typeLabel;
+    QGridLayout *mainLayout;
 };

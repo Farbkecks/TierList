@@ -1,7 +1,6 @@
 #include <QApplication>
-#include <QPushButton>
+#include <QLabel>
 #include "MainWindow.h"
-#include <iostream>
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
@@ -9,5 +8,6 @@ int main(int argc, char *argv[]) {
 
     w.setWindowState(Qt::WindowMaximized);
     w.show();
+
     return QApplication::exec();
 }

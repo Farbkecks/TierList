@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QWidget>
+#include <QLabel>
+#include <QString>
+#include <QVBoxLayout>
 #include <vector>
 #include <string>
 
@@ -9,15 +12,14 @@ Q_OBJECT
 
 public:
     //functions
-    explicit TypeLabel(int width, int height, std::vector<std::string> labelNames,
-                       QWidget *parent = nullptr);
+    TypeLabel(int size, std::vector<std::pair<std::string, QColor>> const &labelNames, QWidget *parent = nullptr);
 
 private:
     //functions
 
 private:
     //variables
-    QSize size;
-    std::vector<std::string> labelNames;
+    std::vector<QLabel *> labels;
+    QVBoxLayout *layout;
 
 };
