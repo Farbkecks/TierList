@@ -18,7 +18,7 @@ namespace Constants {
                 {"Test",  Qt::red},
                 {"Hallo", Qt::blue}
         };
-        const int labelTypeWith = 300;
+        const int labelTypeWith = 200;
 
     }
 }

@@ -10,12 +10,16 @@
 class TypeLabel : public QWidget {
 Q_OBJECT
 
+    typedef std::vector<std::pair<std::string, QColor>> labelsInfoType;
+
 public:
     //functions
-    TypeLabel(int size, std::vector<std::pair<std::string, QColor>> const &labelNames, QWidget *parent = nullptr);
+    TypeLabel(int size, labelsInfoType const &labelNames, QWidget *parent = nullptr);
 
 private:
     //functions
+    bool initLables(const labelsInfoType &labelNames);
+
 
 private:
     //variables
