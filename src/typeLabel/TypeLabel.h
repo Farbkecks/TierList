@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 
+
 class TypeLabel : public QWidget {
 Q_OBJECT
 
@@ -14,11 +15,11 @@ Q_OBJECT
 
 public:
     //functions
-    TypeLabel(int size, labelsInfoType const &labelNames, QWidget *parent = nullptr);
+    TypeLabel(int size, labelsInfoType const &labelNames, const QFont &font, QWidget *parent = nullptr);
 
 private:
     //functions
-    bool initLables(const labelsInfoType &labelNames);
+    bool initLables(const labelsInfoType &labelNames, const QFont &font);
 
 
 private:
