@@ -21,6 +21,7 @@ bool TypeLabel::initLables(const labelsInfoType &labelNames, const QFont &font) 
         palette.setColor(QPalette::Window, type.second); // Set the background color
         palette.setColor(QPalette::WindowText, Qt::black); // Set the text color
         label->setAutoFillBackground(true);
+        label->setWordWrap(true); // Enable automatic word wrapping
         label->setPalette(palette); // Apply the modified palette
 
         //center the text
