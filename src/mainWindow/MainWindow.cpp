@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
     //use the centralWidget to use a main layout
     mainLayout = new QGridLayout(centralWidget);
     mainLayout->setAlignment(Qt::AlignLeft);
-    //put the Left type Labels an the main Layout
+
+    //put the Left type Labels in the main Layout
     typeLabel = new TypeLabel(Constants::LabelType::labelTypeWith, Constants::LabelType::labelTypeNames,
                               Constants::LabelType::font, nullptr);
     mainLayout->addWidget(typeLabel);

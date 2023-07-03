@@ -5,7 +5,10 @@
 #include <QKeyEvent>
 #include <QApplication>
 #include <QGridLayout>
+
+
 #include "TypeLabel.h"
+#include "FreeContent.h"
 #include "Constants.h"
 
 class MainWindow : public QMainWindow {

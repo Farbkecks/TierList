@@ -3,6 +3,6 @@ add_library(libMainWindow
         Constants.h
         )
 
-target_link_libraries(libMainWindow PRIVATE Qt6::Widgets libTypeLabel)
+target_link_libraries(libMainWindow PRIVATE Qt6::Widgets libTypeLabel libFreeContent)
 
 target_include_directories(libMainWindow PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
