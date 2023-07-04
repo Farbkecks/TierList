@@ -24,7 +24,7 @@ private:
 
     bool showPictures(const std::vector<QPixmap> images);
 
-    static std::vector<QString> getNamesFromDirectory(const std::string &path);
+    static std::vector<QString> getPathFromDirectory(const std::string &path);
 
 private:
     //variables

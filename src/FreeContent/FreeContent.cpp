@@ -15,31 +15,36 @@ FreeContent::FreeContent(const std::string &path, const std::vector<QString> &pn
 }
 
 FreeContent::FreeContent(const std::string &path, QWidget *parent)
-        : FreeContent(path, getNamesFromDirectory(path), parent) {}
+        : FreeContent(path, getPathFromDirectory(path), parent) {}
 
 std::vector<QPixmap> FreeContent::loadPictures(const std::string &path, const std::vector<QString> &pngNames) {
 
     std::vector<QPixmap> images;
 
-    std::for_each(pngNames.begin() + 2, pngNames.end(), [&](auto const &name) {
+    std::for_each(pngNames.begin(), pngNames.end(), [&](QString const &name) {
         QPixmap pixmap(name);
         if (pixmap.isNull()) {
-            qDebug() << "pixmap ist null";
+            return;
         }
         images.push_back(pixmap);
     });
+    if (images.empty())
+        qDebug() << "Pixmap vector is empty";
+
     return images;
 }
 
-std::vector<QString> FreeContent::getNamesFromDirectory(const std::string &path) {
+std::vector<QString> FreeContent::getPathFromDirectory(const std::string &path) {
     std::vector<QString> names;
-    QDir direcotry("../../../assets");
-    QFileInfoList fileList = direcotry.entryInfoList();
+    QDir directory(path.c_str());
+    QFileInfoList fileList = directory.entryInfoList();
 
-    // Iterate over the file list and print the file names
+    // Iterate over the file list
             foreach (const QFileInfo &fileInfo, fileList) {
             names.push_back(fileInfo.filePath());
         }
+    if (names.empty())
+        qDebug() << "path vector is empty";
     return names;
 }
 
