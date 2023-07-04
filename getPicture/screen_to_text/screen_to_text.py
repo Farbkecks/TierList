@@ -1,10 +1,9 @@
 import sys
-from PyQt5 import QtWidgets, QtCore, QtGui
 import tkinter as tk
-from PIL import ImageGrab
-import numpy as np
-import cv2
 from PIL import Image
+from PIL import ImageGrab
+from PyQt5 import QtWidgets, QtCore, QtGui
+
 
 class MyWidget(QtWidgets.QWidget):
 
@@ -33,13 +32,13 @@ class MyWidget(QtWidgets.QWidget):
         qp.drawRect(QtCore.QRect(self.begin, self.end))
 
     def mousePressEvent(self, event):
-        self.begin =event.pos() 
+        self.begin = event.pos()
         self.end = self.begin
         self.update()
 
     def mouseMoveEvent(self, event):
-        change = event.pos().x()-self.begin.x()
-        self.end = QtCore.QPoint(self.begin.x()+change, self.begin.y()+change)
+        change = event.pos().x() - self.begin.x()
+        self.end = QtCore.QPoint(self.begin.x() + change, self.begin.y() + change)
         self.update()
 
     def mouseReleaseEvent(self, event):
@@ -55,21 +54,24 @@ class MyWidget(QtWidgets.QWidget):
 
         self.img = img
 
+
 def imageProcess(img, path):
-    img.thumbnail((200,200), Image.Resampling.LANCZOS)
+    img.thumbnail((200, 200), Image.Resampling.LANCZOS)
     print("Test")
     name = input("Bild Name: ")
 
-    img.save(path + rf"\{name}.jpg")
+    img.save(path + rf"\{name}.png")
+
 
 def getPath():
     path = r"C:\Users\fabia\CLionProjects\TierList\assets"
     return path
     userInput = input("bitte den Path eingeben: ")
-    if(userInput == ""):
+    if (userInput == ""):
         return path
     else:
         return userInput
+
 
 def app():
     app = QtWidgets.QApplication(sys.argv)
@@ -77,10 +79,10 @@ def app():
     window.show()
     app.aboutToQuit.connect(app.deleteLater)
     app.exec_()
-    return window.img 
+    return window.img
+
 
 if __name__ == '__main__':
-
     path = getPath()
     img = app()
     imageProcess(img, path)

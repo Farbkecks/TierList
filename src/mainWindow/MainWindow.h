@@ -23,5 +23,7 @@ protected:
 private:
     QWidget *centralWidget;
     TypeLabel *typeLabel;
+    FreeContent *freeContent;
     QGridLayout *mainLayout;
+
 };

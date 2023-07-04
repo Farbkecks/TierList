@@ -30,4 +30,8 @@ namespace Constants {
         const int labelTypeWith = 200;
         const QFont font("Comic Sans MS", 23, QFont::Bold); // Create a QFont object with desired properties
     }
+
+    namespace FreeContent {
+        const std::string path("assets/");
+    }
 }
