@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->addWidget(typeLabel, 0, 0);
 
     freeContent = new FreeContent(Constants::FreeContent::path, nullptr);
+    freeContent->setMaximumHeight(Constants::FreeContent::height);
     mainLayout->addWidget(freeContent, 1, 0);
 
 }

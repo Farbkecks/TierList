@@ -33,5 +33,6 @@ namespace Constants {
 
     namespace FreeContent {
         const std::string path("assets/");
+        const int height = 200;
     }
 }
