@@ -50,7 +50,7 @@ std::vector<QString> FreeContent::getPathFromDirectory(const std::string &path) 
 
 bool FreeContent::showPictures(const std::vector<QPixmap> images) {
     std::for_each(images.begin(), images.end(), [&](auto const &img) {
-        auto label = new QLabel("", this);
+        auto label = new ClickableLabel("", this);
         label->setPixmap(img);
         label->resize(img.size());
         label->show();

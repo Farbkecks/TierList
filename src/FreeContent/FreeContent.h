@@ -8,6 +8,8 @@
 #include <vector>
 #include <string>
 
+#include "ClickableLabel.h"
+
 class FreeContent : public QWidget {
 Q_OBJECT
 

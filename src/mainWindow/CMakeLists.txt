@@ -1,6 +1,7 @@
 add_library(libMainWindow
         MainWindow.cpp
         Constants.h
+        ClickableLabel.cpp
         )
 
 target_link_libraries(libMainWindow PRIVATE Qt6::Widgets libTypeLabel libFreeContent)
